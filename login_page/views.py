@@ -1,9 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 
 
 def loginUser(request):
-    print('dtfguyh')
     if request.POST:
         invalid = False
         print(request.POST)
@@ -13,13 +12,14 @@ def loginUser(request):
         if user is not None:
             login(request, user)
             # Redirect to a success page.
+            return redirect('home_html.html')
 
         else:
             # Return an 'invalid login' error message.
-            print("hi")
             invalid = True
+            return render(request, 'login_html.html', {'invalid': invalid})
 
-        return render(request, 'logged_in.html', {'invalid': invalid})
+
     return render(request, 'login_html.html')
 
 
