@@ -17,7 +17,7 @@ def loginUser(request):
         else:
             # Return an 'invalid login' error message.
             invalid = True
-            return render(request, 'home_html.html', {'invalid': invalid})
+            return render(request, 'login_html.html', {'invalid': invalid})
 
 
     return render(request, 'login_html.html')
