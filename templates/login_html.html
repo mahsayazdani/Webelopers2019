@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base_html.html" %}
 
-</body>
-</html>
+{% block content %}
+<form action={% url "login" %} method="post" id=”login_form”>
+    {% csrf_token %}
+  Username:<br>
+  <input type="text" name="username"><br>
+  Password:<br>
+  <input type="text" name="password">
+
+    <input type="submit" name="Log in" >
+</form>
+{% endblock %}
+
+
