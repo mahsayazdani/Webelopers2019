@@ -38,13 +38,15 @@
     <button name="submit" type="submit">Sign up</button>
 
     {% for field in form %}
+        <div   id="errors">
+{#        jaha avaz shod#}
         {% for error in field.errors %}
-            <div   id="errors">
 
                 <p style="color: red">{{ error }}</p>
-            </div>
 
         {% endfor %}
+        </div>
+
     {% endfor %}
   </form>
 {% endblock %}
