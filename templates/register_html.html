@@ -13,21 +13,29 @@
 {#  </form>#}
 
      <h2>Sign up</h2>
-  <form method="post">
+  <form id="register_form" method="post" action="{% url 'register' %}">
     {% csrf_token %}
-    {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
+
+    <input name="first_name">
+        <input name="last_name">
+        <input name="username">
+        <input name="email">
+        <input name="password1">
+        <input name="password2">
+
+{#    {% for field in form %}#}
+{#      <p>#}
+{#        {{ field.label_tag }}<br>#}
+{#        {{ field }}#}
+{#        {% if field.help_text %}#}
+{#          <small style="color: grey">{{ field.help_text }}</small>#}
+{#        {% endif %}#}
+{#        {% for error in field.errors %}#}
+{#          <p style="color: red">{{ error }}</p>#}
+{#        {% endfor %}#}
+{#      </p>#}
+{#    {% endfor %}#}
+    <button name=”submit" type="submit">Sign up</button>
   </form>
 {% endblock %}
 
