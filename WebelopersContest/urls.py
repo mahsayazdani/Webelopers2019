@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from first_page.views import startMainPage
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', startMainPage, name='firstPageApp'),
 ]
