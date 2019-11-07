@@ -9,3 +9,9 @@
 
 {% endblock %}
 
+{% block error %}
+    {% if invalid %}
+    <div id="error">ERROR</div>
+    {% endif %}
+{% endblock %}
+
